@@ -1,41 +1,58 @@
-# Montreal Image Stress Test (MIST)
+# MIST Stress Test & HRI Analysis Project
 
-这是一个基于 Python Tkinter 的 Montreal Image Stress Test (MIST) 实现。
+这是一个包含 Montreal Image Stress Test (MIST) 实验程序以及相关人机交互 (HRI) 生理与心理数据分析的完整项目。
 
-## 功能特点
+## 核心代码说明
 
-*   **三轮测试**：包含中间休息时间。
-*   **压力模拟**：每道题有时间限制（倒计时进度条），超时自动判错。
-*   **输入方式**：支持鼠标点击选项，或使用键盘数字键 `1`, `2`, `3`, `4`, `5` 快速选择。
-*   **难度控制**：生成简单到中等的算术题（加减乘）。
-*   **数据记录**：自动记录每道题的反应时间、正确率，并生成 CSV 报告。
+本项目主要包含以下核心脚本：
 
-## 运行环境
+### 1. 实验程序
+*   **`mist_test.py`**
+    *   **功能**：运行 MIST 压力测试实验的 GUI 程序。
+    *   **特点**：包含倒计时、算术题生成、自动记录反应时与正确率。
+    *   **运行**：`python mist_test.py`
 
-*   Python 3.x
-*   Tkinter (通常随 Python 安装，Linux 下可能需要单独安装)
+### 2. 数据分析流水线
+*   **`process_data.py`**
+    *   **功能**：数据预处理与融合。
+    *   **描述**：读取 `data/` 目录下的 MIST 行为数据、PhysioLAB 生理数据 (EDA, HR等)、NASA-TLX 问卷数据及 Force Sensor 数据，进行时间戳对齐和清洗，生成 `combined_analysis.csv`。
 
-## 如何运行
+*   **`run_statistics.py`**
+    *   **功能**：统计分析。
+    *   **描述**：对清洗后的数据进行统计检验（如 ANOVA, t-test, Friedman test），分析不同实验条件（A: Self-Think, B: No-Think, C: Naked Robot, D: Clothed Robot）下的显著性差异。
 
-1.  打开终端。
-2.  运行以下命令：
+*   **`visualize_results.py`**
+    *   **功能**：数据可视化。
+    *   **描述**：基于统计结果绘制箱线图、折线图和相关性热力图，可视化生理指标、任务表现和主观问卷评分的差异。
 
-```bash
-python3 mist_test.py
-```
+*   **`summarize_results.py`**
+    *   **功能**：生成报告。
+    *   **描述**：汇总所有分析结果，生成 Markdown 格式的分析报告。
 
-如果提示找不到 `tkinter` 模块，请尝试安装：
+## 实验条件说明
 
-```bash
-sudo apt-get install python3-tk
-```
+*   **Condition A**: Self right hand thinking pose (人类右手思考姿态)
+*   **Condition B**: Forced no thinking pose (强制无思考姿态)
+*   **Condition C**: Control robotic arm thinking pose (Naked) (裸机机械臂思考姿态)
+*   **Condition D**: Control clothed robotic arm thinking pose (Clothed) (穿衣机械臂思考姿态)
 
-## 使用说明
+## 快速开始
 
-1.  **启动程序**：输入被试 ID，点击“开始测试”或按回车。
-2.  **测试过程**：
-    *   屏幕上方显示当前轮次和题目进度。
-    *   屏幕中央显示算术题。
-    *   屏幕下方有 5 个选项。
-    *   **请尽快作答**：绿色进度条会随时间减少并变色（绿->橙->红），时间耗尽将自动跳过。
-3.  **结果**：测试结束后，程序会显示总正确率和每轮的完成时间，详细数据保存在 `results/` 目录下。
+1.  **运行实验**：
+    ```bash
+    python mist_test.py
+    ```
+2.  **运行完整分析**：
+    ```bash
+    # 1. 处理数据
+    python process_data.py
+    # 2. 运行统计
+    python run_statistics.py
+    # 3. 生成图表
+    python visualize_results.py
+    ```
+
+## 依赖库
+
+*   `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`, `pingouin`
+*   `tkinter` (用于实验程序)
