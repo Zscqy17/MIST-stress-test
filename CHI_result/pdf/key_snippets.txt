@@ -1,0 +1,78 @@
+=== touch ===
+2  Robotic Self-Touch and Think-Gesture for Cognitive Offloading Songchen Zhou  3 4  szhou738@connect.hkust-gz.edu.cn HKUST(GZ) GuangZhou, GuangDong, China  5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  Abstract U
+
+
+=== touch ===
+to the body schema, yet how such technological mediation reshapes the perceptual boundary between self and other remains underexplored. This study will systematically investigate whether a robotic arm that performs self-touch and thinking gestures can replicate the cognitive and affective benefits of biological limbs—such as stress relief and reduction of cognitive load, reduction—while identifying key factors that influence whether users pe
+
+
+=== touch ===
+h a multi-modal dataset comprising subjective measures (NASA-TLX, customized embodiment and trust questionnaires), behavioral metrics (task performance and interaction patterns), physiological and physical signals (self-touch force and robotic motion trajectories), and qualitative insights (semistructured interviews and think-aloud transcripts). The findings are expected to provide theoretical and empirical support for the application of emb
+
+
+=== touch ===
+arms in assistive technologies, with potential to enhance cognitive-affective support for non-disabled users and expand interactive experiences for individuals with physical impairments.  31  Keywords  32  robot, human, touch,gesture  35 36 37 38  ACM Reference Format: Songchen Zhou and Junkun Long. 2018. Robotic Self-Touch and ThinkGesture for Cognitive Offloading. In Proceedings of Make sure to enter the correct conference title from your 
+
+
+=== touch ===
+ed users and expand interactive experiences for individuals with physical impairments.  31  Keywords  32  robot, human, touch,gesture  35 36 37 38  ACM Reference Format: Songchen Zhou and Junkun Long. 2018. Robotic Self-Touch and ThinkGesture for Cognitive Offloading. In Proceedings of Make sure to enter the correct conference title from your rights confirmation email (Conference acronym ’XX). ACM, New York, NY, USA, 4 pages. https://doi.org
+
+
+=== touch ===
+ the affective and cognitive regulation potential of embodied technologies remains comparatively underexplored.,This gap matters because human behavior routinely leverages bodily action to regulate cognitive state. Self-touch and certain postures can effectively reduce stress and modulate affect [15]; gestures externalize parts of cognition and facilitate problem solving [8, 13, 16]; and affective touch can buffer acute stress responses and 
+
+
+=== touch ===
+tion to regulate cognitive state. Self-touch and certain postures can effectively reduce stress and modulate affect [15]; gestures externalize parts of cognition and facilitate problem solving [8, 13, 16]; and affective touch can buffer acute stress responses and mitigate social exclusion [9, 11, 17]. These works in the literature motivate a central question: Can external systems reproduce these embodied regulation mechanisms—thereby enablin
+
+
+=== touch ===
+gate social exclusion [9, 11, 17]. These works in the literature motivate a central question: Can external systems reproduce these embodied regulation mechanisms—thereby enabling “cognitive offload” through robotic self-touch—without interrupting primary tasks and with parameters that are precise, repeatable, and ethically controllable? To investigate this question, we design experiments in which a chairside robotic arm delivers two represen
+
+
+=== touch ===
+gn experiments in which a chairside robotic arm delivers two representative regulatory actions during high-load cognitive work (continuous typing + planning): thinking gestures (e.g., chin-cradling) and self/ functional touch. We pose the following research questions: (1) RQ1: How do robotic thinking gestures and self-touch affect task performance, stress levels, and subjective cognitive load? [8, 11, 15], (2)RQ2: Under what conditions is th
+
+
+=== touch ===
+g high-load cognitive work (continuous typing + planning): thinking gestures (e.g., chin-cradling) and self/ functional touch. We pose the following research questions: (1) RQ1: How do robotic thinking gestures and self-touch affect task performance, stress levels, and subjective cognitive load? [8, 11, 15], (2)RQ2: Under what conditions is the robotic arm experienced as a self-extension versus an other-agent? How do spatiotemporal predictab
+
+
+=== touch ===
+xpands personal space and updates body schema [14]. VR uses questionnaires to assess ownership, agency, and self-location [12]. Predictive coding models explain the "self vs. other" boundary: predictable, self-generated touches are less intense than unpredictable, external ones. Adjusting temporal delays or trajectory mismatches can modulate this effect, involving cerebellar-somatosensory circuits. Non-zero delays can recalibrate the system,
+
+
+=== touch ===
+emporal delays or trajectory mismatches can modulate this effect, involving cerebellar-somatosensory circuits. Non-zero delays can recalibrate the system, using "predictability" to manage agency and ownership in robotic touch [3]. In prosthetics, embodiment is seen as ownership and agency combined, with recommendations for measurement, warning against viewing embodiment as the sole acceptance factor [18]. These perspectives guide the study’s
+
+
+=== touch ===
+nt as the sole acceptance factor [18]. These perspectives guide the study’s design for self/other manipulation and measurement.  2.2  155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174  Self-touching, emotional touching, and thinking gestures under high load  Behavioral and neural findings indicate gestures and self-touch act as cognitive aids and emotional regulators. Co-speech gestures can decrease working memo
+
+
+=== touch ===
+tance factor [18]. These perspectives guide the study’s design for self/other manipulation and measurement.  2.2  155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174  Self-touching, emotional touching, and thinking gestures under high load  Behavioral and neural findings indicate gestures and self-touch act as cognitive aids and emotional regulators. Co-speech gestures can decrease working memory load during expla
+
+
+=== touch ===
+  2.2  155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174  Self-touching, emotional touching, and thinking gestures under high load  Behavioral and neural findings indicate gestures and self-touch act as cognitive aids and emotional regulators. Co-speech gestures can decrease working memory load during explanations and problemsolving, with reviews confirming significant benefits across tasks [8, 16]. Spontaneous 
+
+
+=== touch ===
+itive aids and emotional regulators. Co-speech gestures can decrease working memory load during explanations and problemsolving, with reviews confirming significant benefits across tasks [8, 16]. Spontaneous facial self-touch (sFST) increases with cognitive/emotional load, linked to transient neural state changes in EEG studies [15]. Self-soothing touch and hugs lower cortisol levels in trials; meta-analyses show significant benefits of touc
+
+
+=== touch ===
+ith reviews confirming significant benefits across tasks [8, 16]. Spontaneous facial self-touch (sFST) increases with cognitive/emotional load, linked to transient neural state changes in EEG studies [15]. Self-soothing touch and hugs lower cortisol levels in trials; meta-analyses show significant benefits of touch in managing stress and anxiety; interpersonal touch, like hand-holding, reduces threat-related brain responses, underscoring its
+
+
+=== touch ===
+ouch (sFST) increases with cognitive/emotional load, linked to transient neural state changes in EEG studies [15]. Self-soothing touch and hugs lower cortisol levels in trials; meta-analyses show significant benefits of touch in managing stress and anxiety; interpersonal touch, like hand-holding, reduces threat-related brain responses, underscoring its stress-reducing role [11]. If users perceive the robotic arm as an extension of their own 
+
+
+=== touch ===
+ linked to transient neural state changes in EEG studies [15]. Self-soothing touch and hugs lower cortisol levels in trials; meta-analyses show significant benefits of touch in managing stress and anxiety; interpersonal touch, like hand-holding, reduces threat-related brain responses, underscoring its stress-reducing role [11]. If users perceive the robotic arm as an extension of their own body, it may also trigger the similar response.  2.3
+
+
+=== touch ===
+n responses, underscoring its stress-reducing role [11]. If users perceive the robotic arm as an extension of their own body, it may also trigger the similar response.  2.3  Wearable/Auxiliary Robotic Arms and Emotional Touch in Robotics  Supernumerary robotic limbs (SRLs) and chair-/shoulder-mounted assistant arms demonstrate that extra limbs can share workloads,  175 176 177 178 179 180 181 182 183 184 185 186 187  safety and comfort. The 

@@ -1,0 +1,962 @@
+2
+
+Robotic Self-Touch and Think-Gesture for Cognitive Offloading
+Songchen Zhou
+
+3
+4
+
+szhou738@connect.hkust-gz.edu.cn
+HKUST(GZ)
+GuangZhou, GuangDong, China
+
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+
+Abstract
+Under appropriate sensorimotor conditions, robotic limbs can be
+integrated into the body schema, yet how such technological mediation reshapes the perceptual boundary between self and other
+remains underexplored. This study will systematically investigate
+whether a robotic arm that performs self-touch and thinking gestures can replicate the cognitive and affective benefits of biological
+limbs—such as stress relief and reduction of cognitive load, reduction—while identifying key factors that influence whether users
+perceive it as a self-extension or an external agent. The prototype
+will be evaluated through a multi-modal dataset comprising subjective measures (NASA-TLX, customized embodiment and trust
+questionnaires), behavioral metrics (task performance and interaction patterns), physiological and physical signals (self-touch force
+and robotic motion trajectories), and qualitative insights (semistructured interviews and think-aloud transcripts). The findings
+are expected to provide theoretical and empirical support for the
+application of embodied robotic arms in assistive technologies, with
+potential to enhance cognitive-affective support for non-disabled
+users and expand interactive experiences for individuals with physical impairments.
+
+31
+
+Keywords
+
+32
+
+robot, human, touch,gesture
+
+35
+36
+37
+38
+
+ACM Reference Format:
+Songchen Zhou and Junkun Long. 2018. Robotic Self-Touch and ThinkGesture for Cognitive Offloading. In Proceedings of Make sure to enter
+the correct conference title from your rights confirmation email (Conference acronym ’XX). ACM, New York, NY, USA, 4 pages. https://doi.org/
+XXXXXXX.XXXXXXX
+
+pu
+
+34
+
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+
+1
+
+Un
+
+33
+
+Introduction
+
+The boundaries of human bodily and mental capacities are not fixed
+but highly plastic. The Extended Mind thesis argues that cognitive
+processes can extend beyond the biological organism into external
+tools and environments, forming a coupled human–artifact–world
+system [6]. In virtual reality, synchronous visuospatial - tactile /
+kinesthetic feedback during first-person avatar control systematically induces embodied experience, capturing ownership, agency,
+
+57
+
+Permission to make digital or hard copies of all or part of this work for personal or
+Unpublished
+working
+for distribution.
+classroom
+use is granted
+without feedraft.
+providedNot
+that copies
+are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior specific permission
+and/or a fee. Request permissions from permissions@acm.org.
+Conference acronym ’XX, Woodstock, NY
+© 2018 Copyright held by the owner/author(s). Publication rights licensed to ACM.
+ACM ISBN 978-1-4503-XXXX-X/2018/06
+https://doi.org/XXXXXXX.XXXXXXX
+
+58
+
+2025-12-10 06:07. Page 1 of 1–4.
+
+50
+51
+52
+53
+54
+55
+56
+
+Junkun Long
+
+jlong892@connect.hkust-gz.edu.cn
+HKUST(GZ)
+GuangZhou, GuangDong, China
+and self-location which can be measured with standardized questionnaires [12]. External objects can be incorporated into bodily
+representation, yielding ownership sensations and proprioceptive
+drift [5]; tool-use research further demonstrates that short- or
+long-term practice reshapes peripersonal space and action representations [14]; and in virtual reality, synchronous visuospatial–tactile/kinesthetic feedback during first-person avatar control
+systematically induces embodied experience—capturing ownership,
+agency, and self-location which can be measured with standardized
+questionnaires [12]. Taken together, these findings reveal the mechanisms by which external entities (e.g., virtual limbs, tools, or robots)
+can be integrated into bodily experience under specific spatiotemporal and causal conditions.,Building on this plasticity, researchers
+have begun to explore its value for assistive and augmentative
+technologies. In robotics and prosthetics, evaluation frameworks
+for prosthetic embodiment emphasize the joint contribution of
+ownership and agency [18]. Representative cases include handaugmentation devices (e.g., the “Third Thumb”), which can elicit
+adaptive changes at the neural and behavioral levels after shortterm training [7]; wheelchair-mounted robotic arms and assistive
+manipulators, which not only improve everyday function, but can
+also support nonverbal communication [1, 2, 19]. Notably, prior
+work has focused primarily on functional augmentation, while
+the affective and cognitive regulation potential of embodied technologies remains comparatively underexplored.,This gap matters
+because human behavior routinely leverages bodily action to regulate cognitive state. Self-touch and certain postures can effectively
+reduce stress and modulate affect [15]; gestures externalize parts
+of cognition and facilitate problem solving [8, 13, 16]; and affective
+touch can buffer acute stress responses and mitigate social exclusion [9, 11, 17]. These works in the literature motivate a central
+question: Can external systems reproduce these embodied regulation mechanisms—thereby enabling “cognitive offload” through
+robotic self-touch—without interrupting primary tasks and with parameters that are precise, repeatable, and ethically controllable? To
+investigate this question, we design experiments in which a chairside robotic arm delivers two representative regulatory actions
+during high-load cognitive work (continuous typing + planning):
+thinking gestures (e.g., chin-cradling) and self/ functional touch.
+We pose the following research questions:
+(1) RQ1: How do robotic thinking gestures and self-touch affect
+task performance, stress levels, and subjective cognitive load? [8,
+11, 15],
+(2)RQ2: Under what conditions is the robotic arm experienced
+as a self-extension versus an other-agent? How do spatiotemporal predictability and morphological/spatial matching shape this
+boundary? [3, 5, 14]
+(3)RQ3: When the arm is experienced as self, how do user preferences for interaction parameters (e.g., force, trajectory) differ from
+
+No blis
+t f he
+or d w
+di o
+str rk
+ib ing
+ut d
+io ra
+n. ft
+.
+
+1
+
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+
+Conference acronym ’XX, June 03–05, 2018, Woodstock, NY
+
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+
+2 Related Works
+2.1 Embodiment, Extended Cognition, and the
+"Self-Other" Boundary Conditions
+
+Clark’s research shows cognition and bodily experience are flexible.
+The extended mind theory includes artifacts in the cognitive system
+[6]. The illusion of a rubber hand shows that visual-tactile pairings
+induce ownership and proprioceptive drift [5]. Tool use expands
+personal space and updates body schema [14]. VR uses questionnaires to assess ownership, agency, and self-location [12]. Predictive
+coding models explain the "self vs. other" boundary: predictable,
+self-generated touches are less intense than unpredictable, external ones. Adjusting temporal delays or trajectory mismatches can
+modulate this effect, involving cerebellar-somatosensory circuits.
+Non-zero delays can recalibrate the system, using "predictability"
+to manage agency and ownership in robotic touch [3]. In prosthetics, embodiment is seen as ownership and agency combined,
+with recommendations for measurement, warning against viewing
+embodiment as the sole acceptance factor [18]. These perspectives
+guide the study’s design for self/other manipulation and measurement.
+
+2.2
+
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+
+Self-touching, emotional touching, and
+thinking gestures under high load
+
+Behavioral and neural findings indicate gestures and self-touch act
+as cognitive aids and emotional regulators. Co-speech gestures can
+decrease working memory load during explanations and problemsolving, with reviews confirming significant benefits across tasks
+[8, 16]. Spontaneous facial self-touch (sFST) increases with cognitive/emotional load, linked to transient neural state changes in EEG
+studies [15]. Self-soothing touch and hugs lower cortisol levels in
+trials; meta-analyses show significant benefits of touch in managing
+stress and anxiety; interpersonal touch, like hand-holding, reduces
+threat-related brain responses, underscoring its stress-reducing role
+[11]. If users perceive the robotic arm as an extension of their own
+body, it may also trigger the similar response.
+
+2.3
+
+Wearable/Auxiliary Robotic Arms and
+Emotional Touch in Robotics
+
+Supernumerary robotic limbs (SRLs) and chair-/shoulder-mounted
+assistant arms demonstrate that extra limbs can share workloads,
+
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+
+safety and comfort. The Third Thumb study reveals rapid learnability among the general population and significant neural reorganization after short-term training, highlighting the feasibility
+of embodied augmentation in daily tasks [7]. In assistive contexts,
+wheelchair-mounted robotic arms (e.g., JACO) significantly enhance independence in daily activities and yield measurable social impact; recent reviews systematically outline applications of
+eye-tracking/shared control in accessibility [1, 2]. In addition to
+operational tasks, emotionally-driven touch initiated by robots, as
+demonstrated by the HuggieBot series, shows that softness, warmth,
+and timing/pressure responsiveness significantly enhance the experience; design guidelines for autonomous hugs have been validated
+in user studies [4].
+However, research on user-initiated interactions, where robotic
+arms are perceived as extensions of the body for self-touch, remains
+relatively scarce.
+
+188
+
+3 Method
+3.1 Robot and Equipment
+
+205
+
+The experimental platform consisted of an integrated robotic system
+with sensing and control capabilities. The key components are as
+follows:
+Robotic Manipulator: A 6-degree-of-freedom Piper robotic arm
+(Agilex Robotics) was employed. An open-source 3D-printed prosthetic hand was attached as the end-effector, capable of accurately
+replicating and holding any user-specified hand posture.Force Sensing Unit: Several high-precision pressure sensors (resolution: 0.01
+N) were integrated. This unit operated in two modes: (1) Measuring
+interaction forces during self-touch performed by the user with
+their biological hand. (2)Measuring interaction forces between the
+user and the 3D-printed hand when mounted on the robotic arm.
+Control and Data Acquisition: A central PC running the Ubuntu
+22.04 operating system was responsible for overall system control
+and data logging.
+Trajectory Recording and Playback System: A custom system application was developed using the Agilex Piper SDK. This software
+featured a "teaching" mode, allowing the experimenter to manually
+guide the robotic arm to record motion trajectories. These trajectories could then be accurately replayed with a single command,
+ensuring consistent experimental conditions across trials.
+Safety Mechanism: An independent physical emergency stop
+button was installed, enabling the immediate deactivation of the
+robotic arm at any moment to guarantee participant safety.
+
+208
+
+2025-12-10 06:07. Page 2 of 1–4.
+
+232
+
+No blis
+t f he
+or d w
+di o
+str rk
+ib ing
+ut d
+io ra
+n. ft
+.
+
+119
+
+using the biological limb to perform the same actions? [18],Correspondingly,
+we advance three hypotheses:
+(1) H1: Relative to a no-touch control, robotic regulatory actions
+will improve task performance and recovery, and reduce stress
+indices and subjective load (lower NASA-TLX).
+(2) H2: High trajectory similarity and low latency will promote
+self-attribution, whereas added delay/trajectory perturbations will
+bias toward other-attribution [3].
+(3) H3: Under self-attribution with higher trust/ownership, preFigure 1: Force Sensor 3D, modeled hand and robot arm
+ferred parameters will approximate those of one’s biological selftouch; under other-attribution or low trust, users will prefer more
+conservative interaction (smaller forces and greater deviation from
+stabilize posture, and free biological hands; their control archipersonal self-touch trajectories) [18].
+tectures (e.g., compliance/impedance, shared control) prioritize
+
+pu
+
+118
+
+Un
+
+117
+
+Trovato et al.
+
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+206
+207
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+
+Robotic Self-Touch and Think-Gesture for Cognitive Offloading
+
+233
+
+3.2
+
+234
+
+Participants were recruited using university channels and academic
+social media groups through a mixed-method strategy and convenience sampling based on criteria. Eligible participants were aged
+18 or older without proprioceptive or tactile disorders. Exclusion
+criteria covered neurological or psychiatric disorders, skin issues
+affecting tactile perception, and recent substance use affecting the
+CNS or attention. A total of 24 participants, with no gender restrictions, were recruited. They signed written informed consent and
+received 50 RMB for completing the 60-minute session, which included preparation, the experiment, and a post-experiment inquiry.
+Partial compensation was given if they withdrew early.
+
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+
+Conference acronym ’XX, June 03–05, 2018, Woodstock, NY
+
+Participants
+
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+
+Figure 2: Force Sensor Data Visualization
+
+247
+248
+249
+
+3.3
+
+Procedure
+
+No blis
+t f he
+or d w
+di o
+str rk
+ib ing
+ut d
+io ra
+n. ft
+.
+
+246
+
+290
+
+2025-12-10 06:07. Page 3 of 1–4.
+
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+
+Un
+
+251
+
+pu
+
+289
+
+Participants provided written consent upon arrival. The experiment
+proceeded as follows:
+Participants first completed the Montreal Imaging Stress Test
+(MIST) [10] without knowledge of subsequent tasks to establish
+behavioral baselines. Researchers instructed users to perform a
+common thinking gesture with a robotic arm and with their own
+hands, as shown in Figure 1’s model hand; as a control, participants
+were reminded to keep both hands on the keyboard during testing
+without thinking gestures. The experiment involves a task that
+combines computation and word memory to simulate cognitive
+load. After completion, participants filled out the NASA-TLX scale
+and Avatar Emblem Questionnaire to assess cognitive load and
+memory performance.
+Execution phase of experimental conditions: Participants underwent four experimental conditions. To counterbalance order effects,
+the sequence of conditions was arranged using a Latin Square design.
+Biological Self-Touch Condition: Participants performed the
+MIST task using only their bare hand to touch their own body.
+It served as the baseline for natural self-touch.
+No Self-Touch Condition: Participants performed the MIST task
+without using their hand to touch their body. They were explicitly
+instructed to keep their hands still and refrain from any self-touch
+during the task.
+Robotic Arm Intervention Condition: A robotic hand delivered
+touch to the participant’s body while they performed the MIST
+task. Participants could actively control when the robotic hand was
+operating: they started and stopped the robotic hand using a button,
+thereby deciding when touch was applied.
+Clothed Robotic Hand Condition: This condition was identical
+to the Robotic Hand Condition, except that the robotic hand was
+covered with a piece of clothing. The added garment altered the
+visual and tactile appearance of the robotic hand while participants
+still controlled its activation via the same on/off interface.
+Post-Experiment Interview and Data Collection: A semi-structured
+interview was conducted to explore participants’ perceptions, attributions of robotic arm actions, and emotional state changes. Data
+collected included NASA-TLX scores, word memorization performance, force data from gloves and robotic arm, and qualitative
+interview data.
+
+250
+
+3.4
+
+Data Collection and Analysis
+
+This study uses a multi-modal data collection: subjective (NASATLX scores, questionnaires on embodiment and trust[12]), behavioral (word memorization accuracy), physiological (self-touch forces,
+robotic arm trajectories, etc.), and qualitative (transcriptions from
+interviews and think-alouds). Analysis quantitative data, employing Repeated-Measures ANOVA for performance and load effects
+(RQ1/H1), logistic regression for robotic arm attribution (RQ2/H2),
+and t-tests and correlations for interaction parameters and trustpreferences (RQ3/H3). Thematic analysis of qualitative data offers
+deeper user experience insights, contextualizing quantitative results.
+
+4
+
+Summary & Timeline
+
+We have currently confirmed the use of a 3D model hand to secure
+the sensors, avoiding errors caused by the flexible joints of the
+3D model. We utilize Paxini’s pressure sensors and can analyze
+the combined force and direction of each sensor through code. For
+the robotic arm, we employ Agilex’s Piper SDK to achieve manual
+teaching and reproduction of movements, as well as file management for motion trajectories, including emergency stop functions.
+Next, we will combine pressure task experiments. From 11/17 to
+11/21, we will implement the Minimum Viable Product (MVP) and
+conduct a pilot study with around 3 participants (possibly collecting
+eye-tracking data to confirm user gaze points). From 11/24 to 11/28,
+we will recruit approximately 14 users for user experiments. On
+12/1, we will analyze the results and, based on the findings and
+the content of this report, prepare the HRI LBR content, aiming to
+submit by the AOE deadline on 12/8.
+
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+
+References
+
+338
+
+[1] Giulia Barbareschi, Songchen Zhou, Ando Ryoichi, Midori Kawaguchi, Mark
+Armstrong, Mikito Ogino, Shunsuke Aoiki, Eisaku Ohta, Harunobu Taguchi,
+Youichi Kamiyama, et al. 2024. Brain Body Jockey project: Transcending Bodily
+Limitations in Live Performance via Human Augmentation. In Proceedings of the
+26th International ACM SIGACCESS Conference on Computers and Accessibility.
+1–14.
+[2] Maude Beaudoin, Josiane Lettre, François Routhier, Philippe S Archambault,
+Martin Lemay, and Isabelle Gélinas. 2019. Long-term use of the JACO robotic
+arm: a case series. Disability and rehabilitation: Assistive technology 14, 3 (2019),
+267–275.
+[3] Sarah-J Blakemore, Daniel M Wolpert, and Chris D Frith. 1998. Central cancellation of self-produced tickle sensation. Nature neuroscience 1, 7 (1998), 635–640.
+
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+
+Conference acronym ’XX, June 03–05, 2018, Woodstock, NY
+
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+
+stress, physical touch, and social identity. Comprehensive Psychoneuroendocrinology 8 (2021), 100091.
+[12] Mar Gonzalez-Franco and Tabitha C Peck. 2018. Avatar embodiment. towards a
+standardized questionnaire. Frontiers in Robotics and AI 5 (2018), 74.
+[13] David Kirsh and Paul Maglio. 1994. On distinguishing epistemic from pragmatic
+action. Cognitive science 18, 4 (1994), 513–549.
+[14] Angelo Maravita and Atsushi Iriki. 2004. Tools for the body (schema). Trends in
+cognitive sciences 8, 2 (2004), 79–86.
+[15] Stephanie Margarete Mueller, Sven Martin, and Martin Grunwald. 2019. Selftouch: contact durations and point of touch of spontaneous facial self-touches
+differ depending on cognitive and emotional load. PloS one 14, 3 (2019), e0213677.
+[16] Raedy Ping and Susan Goldin-Meadow. 2010. Gesturing saves cognitive resources
+when talking about nonpresent objects. Cognitive Science 34, 4 (2010), 602–619.
+[17] Mariana Von Mohr, Louise P Kirsch, and Aikaterini Fotopoulou. 2017. The
+soothing function of touch: affective touch reduces feelings of social exclusion.
+Scientific reports 7, 1 (2017), 13516.
+[18] Jan Zbinden, Eva Lendaro, and Max Ortiz-Catalan. 2022. Prosthetic embodiment:
+systematic review on definitions, measures, and experimental paradigms. Journal
+of NeuroEngineering and Rehabilitation 19, 1 (2022), 37.
+[19] Songchen Zhou, Mark Armstrong, Giulia Barbareschi, Toshihiro Ajioka, Zheng
+Hu, Ryoichi Ando, Kentaro Yoshifuji, Masatane Muto, and Kouta Minamizawa.
+2025. Augmented Body Communicator: Enhancing daily body expression for
+people with upper limb limitations through LLM and a robotic arm. arXiv preprint
+arXiv:2505.05832 (2025).
+
+No blis
+t f he
+or d w
+di o
+str rk
+ib ing
+ut d
+io ra
+n. ft
+.
+
+351
+
+[4] Alexis Emily Block. 2021. HuggieBot: An interactive hugging robot with visual and
+haptic perception. Ph. D. Dissertation. ETH Zurich.
+[5] Matthew Botvinick and Jonathan Cohen. 1998. Rubber hands ‘feel’touch that
+eyes see. Nature 391, 6669 (1998), 756–756.
+[6] Andy Clark and David Chalmers. 1998. The extended mind. analysis 58, 1 (1998),
+7–19.
+[7] Dani Clode, Lucy Dowdall, Edmund da Silva, Klara Selén, Dorothy Cowie, Giulia
+Dominijanni, and Tamar R Makin. 2024. Evaluating initial usability of a hand
+augmentation device across a large and diverse sample. Science robotics 9, 90
+(2024), eadk5183.
+[8] Susan Wagner Cook, Terina Kuangyi Yip, and Susan Goldin-Meadow. 2012. Gestures, but not meaningless movements, lighten working memory load when
+explaining math. Language and cognitive processes 27, 4 (2012), 594–610.
+[9] Alexies Dagnino-Subiabre. 2022. Resilience to stress and social touch. Current
+Opinion in Behavioral Sciences 43 (2022), 75–79.
+[10] Katarina Dedovic, Robert Renwick, Najmeh Khalili Mahani, Veronika Engert,
+Sonia J Lupien, and Jens C Pruessner. 2005. The Montreal Imaging Stress Task:
+using functional imaging to investigate the effects of perceiving and processing
+psychosocial stress in the human brain. Journal of Psychiatry and Neuroscience
+30, 5 (2005), 319–325.
+[11] Aljoscha Dreisoerner, Nina M Junker, Wolff Schlotz, Julia Heimrich, Svenja Bloemeke, Beate Ditzen, and Rolf van Dick. 2021. Self-soothing touch and being
+hugged reduce cortisol responses to stress: A randomized controlled trial on
+
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+
+pu
+
+350
+
+443
+444
+
+Un
+
+349
+
+Trovato et al.
+
+445
+446
+447
+
+390
+
+448
+
+391
+
+449
+
+392
+
+450
+
+393
+
+451
+
+394
+
+452
+
+395
+
+453
+
+396
+
+454
+
+397
+
+455
+
+398
+
+456
+
+399
+
+457
+
+400
+
+458
+
+401
+
+459
+
+402
+
+460
+
+403
+
+461
+
+404
+
+462
+463
+
+405
+406
+
+2025-12-10 06:07. Page 4 of 1–4.
+
+464
+
+
